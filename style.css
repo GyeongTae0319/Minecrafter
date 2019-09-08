@@ -14,6 +14,9 @@ body {
 body>input {
     display: none;
 }
+a {
+    text-decoration: inherit;
+}
 h1 {
     margin: 0;
 }
@@ -187,7 +190,6 @@ header>a {
 
     transition: background-color 0.25s, transform 0.25s;
 }
-
 #nightSwitch:checked ~ header #moonShadow {
     background-color: #272727;
 
