@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minecrafter</title>
+
+    <meta name="author" content="Blro">
+    <meta name="theme-color" content="#2a2b59">
+    <meta name="title" content="Minecrafter">
+    <meta name="description" content="마인크래프트 플레이어를 위한 도우미">
+    <meta name="subject" content="MC Helper">
+
+    <meta property="og:title" content="Minecrafter">
+    <meta property="og:image" content="./assets/images/banner.png">
+    <meta property="og:description" content="마인크래프트 플레이어를 위한 도우미">
+    <meta property="og:url" content="https://gyeongtae0319.github.io/Minecrafter/">
+
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="radio" name="nav_item" id="mainPage" checked>
+    <input type="radio" name="nav_item" id="skinTool">
+    <input type="radio" name="nav_item" id="bannerTool">
+
+    <input type="checkbox" name="nav_open" id="navSwitch">
+
+    <header>
+        <label id="navSwitchIcon" for="navSwitch">
+            <span></span><span></span><span></span>
+        </label>
+
+        <a href="./">
+            <img src="./assets/images/title.svg" id="headerTitleImg">
+        </a>
+    </header>
+
+    <nav>
+        <label for="mainPage" class="item">
+            <img src="./assets/images/icons/grass_block.png">
+            <span>홈</span>
+        </label>
+        <label for="skinTool" class="item">
+            <img src="./assets/images/icons/player_head.png">
+            <span>스킨 도구</span>
+        </label>
+        <label for="bannerTool" class="item">
+            <img src="./assets/images/icons/banner.png">
+            <span>배너 제작</span>
+        </label>
+    </nav>
+</body>
+</html>
