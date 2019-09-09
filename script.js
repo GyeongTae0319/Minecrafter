@@ -1,22 +1,17 @@
 //* Data Check *//
+function checkBooleanData(key, defaultValue) {
+    if (localStorage.getItem(key) == null) {
+        localStorage.setItem(key, defaultValue);
+    }
+
+    return localStorage.getItem(key) == "true";
+}
 
 // Night Mode
-var nightMode = true;
-if (localStorage.getItem("nightMode") == null) {
-    localStorage.setItem("nightMode", "true");
-}
-else {
-    nightMode = (localStorage.getItem("nightMode") == "true");
-}
+var nightMode = checkBooleanData("nightMode", "true");
 
 // Nav Opened
-var navOpened = false;
-if (localStorage.getItem("navOpened") == null) {
-    localStorage.setItem("navOpened", "false");
-}
-else {
-    navOpened = (localStorage.getItem("navOpened") == "true")
-}
+var navOpened = checkBooleanData("navOpened", "false");
 
 
 //* Page Load *//
@@ -30,6 +25,22 @@ window.onload = () => {
     // Nav Opened
     var navSwitch = document.getElementById("navSwitch");
     navSwitch.checked = navOpened;
+
+
+    //* On Click Event *//
+    var navItems = document.querySelectorAll("nav>.item");
+    navItems.forEach(item => {
+        item.addEventListener("click", (e) => {
+            if (item.classList.contains("select")) {
+                e.preventDefault();
+            }
+
+            navItems.forEach(element => {
+                element.classList.remove("select");
+            });
+            item.classList.add("select");
+        });
+    });
 
 
     //* Interval *//

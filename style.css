@@ -1,63 +1,3 @@
-/*//--- Base Style ---//*/
-
-/*/-- Elements --/*/
-* {
-    box-sizing: border-box;
-}
-/* Page */
-html {
-    scroll-behavior: smooth;
-}
-body {
-    margin: 0;
-}
-body>input {
-    display: none;
-}
-a {
-    text-decoration: inherit;
-}
-h1 {
-    margin: 0;
-}
-
-/*/-- Scroll Bar --/*/
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    background-color: #f1f1f1;
-
-    transition: background-color 0.25s;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
-
-    transition: background-color 0.25s;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #a8a8a8;
-
-    transition: background-color 0.25s;
-}
-::-webkit-scrollbar-thumb:active {
-    background-color: #787878;
-
-    transition: background-color 0.25s;
-}
-#nightSwitch:checked ~ ::-webkit-scrollbar {
-    background-color: #1c1c1c;
-}
-#nightSwitch:checked ~ ::-webkit-scrollbar-thumb {
-    background-color: #595959;
-}
-#nightSwitch:checked ~ ::-webkit-scrollbar-thumb:hover {
-    background-color: #636363;
-}
-#nightSwitch:checked ~ ::-webkit-scrollbar-thumb:active {
-    background-color: #6e6e6e;
-}
-
-
 /*//--- Header Style ---//*/
 
 /*/-- Base --/*/
@@ -119,7 +59,7 @@ header>* {
     transform: rotate(45deg) translate(6px, 6px);
 }
 #navSwitch:checked ~ header>#navSwitchIcon>*:nth-child(2) {
-    transform: scale(0);
+    transform: scaleX(0);
 }
 #navSwitch:checked ~ header>#navSwitchIcon>*:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
@@ -239,26 +179,18 @@ nav>.item>* {
 }
 
 nav>.item:hover,
-input[name="nav_item"]:checked:nth-child(1) ~ nav>.item:nth-child(1),
-input[name="nav_item"]:checked:nth-child(2) ~ nav>.item:nth-child(2),
-input[name="nav_item"]:checked:nth-child(3) ~ nav>.item:nth-child(3) {
+nav>.item.select {
     background-color: #dcdcdc;
 }
 #nightSwitch:checked ~ nav>.item:hover,
-input[name="nav_item"]:checked:nth-child(1) ~ #nightSwitch:checked ~ nav>.item:nth-child(1),
-input[name="nav_item"]:checked:nth-child(2) ~ #nightSwitch:checked ~ nav>.item:nth-child(2),
-input[name="nav_item"]:checked:nth-child(3) ~ #nightSwitch:checked ~ nav>.item:nth-child(3) {
+#nightSwitch:checked ~ nav>.item.select {
     background-color: #333333;
 }
 
-input[name="nav_item"]:checked:nth-child(1) ~ nav>.item:nth-child(1):hover,
-input[name="nav_item"]:checked:nth-child(2) ~ nav>.item:nth-child(2):hover,
-input[name="nav_item"]:checked:nth-child(3) ~ nav>.item:nth-child(3):hover {
+nav>.item.select:hover {
     background-color: #c4c4c4;
 }
-input[name="nav_item"]:checked:nth-child(1) ~ #nightSwitch:checked ~ nav>.item:nth-child(1):hover,
-input[name="nav_item"]:checked:nth-child(2) ~ #nightSwitch:checked ~ nav>.item:nth-child(2):hover,
-input[name="nav_item"]:checked:nth-child(3) ~ #nightSwitch:checked ~ nav>.item:nth-child(3):hover {
+#nightSwitch:checked ~ nav>.item.select:hover {
     background-color: #484848;
 }
 
@@ -296,7 +228,7 @@ nav>.item>span {
 #section {
     z-index: 0;
 
-    overflow-y: auto;
+    overflow: hidden;
 
     position: relative;
     top: 64px;
@@ -307,10 +239,7 @@ nav>.item>span {
 
     border: none;
 
-    color: #000000;
-    background-color: #fafafa;
-
-    transition: left 0.25s, width 0.25s, color 0.25s, background-color 0.25s;
+    transition: left 0.25s, width 0.25s, background-color 0.25s;
 }
 #navSwitch:checked ~ #section {
     left: 256px;
@@ -318,6 +247,5 @@ nav>.item>span {
     width: calc(100% - 256px);
 }
 #nightSwitch:checked ~ #section {
-    color: #ffffff;
     background-color: #121212;
 }

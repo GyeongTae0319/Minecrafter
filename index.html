@@ -19,15 +19,12 @@
 
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/styles/default.css">
+    <link rel="stylesheet" href="./style.css">
     
     <script src="./script.js"></script>
 </head>
-<body style="overflow: hidden;">
-    <input type="radio" name="nav_item" id="homeSelector" checked>
-    <input type="radio" name="nav_item" id="skinToolSelector">
-    <input type="radio" name="nav_item" id="bannerToolSelector">
-    
+<body>
     <input type="checkbox" name="header_setting" id="navSwitch">
     <input type="checkbox" name="header_setting" id="nightSwitch" checked>
 
@@ -36,7 +33,7 @@
             <span></span><span></span><span></span>
         </label>
 
-        <a href="./">
+        <a href="./home/" target="section">
             <img src="./assets/images/title.svg" id="headerTitleImg">
         </a>
 
@@ -71,18 +68,20 @@
     </header>
 
     <nav>
-        <label for="homeSelector" class="item">
+        <a href="./home/" target="section" class="item select" id="homeSelector">
             <img src="./assets/images/favicon.png">
             <span>홈</span>
-        </label>
-        <label for="skinToolSelector" class="item">
+        </a>
+
+        <a href="./skin/" target="section" class="item" id="skinToolSelector">
             <img src="./assets/images/icons/player_head.png">
             <span>스킨 도구</span>
-        </label>
-        <label for="bannerToolSelector" class="item">
+        </a>
+
+        <a href="./banner/" target="section" class="item" id="bannerToolSelector">
             <img src="./assets/images/icons/banner.png">
             <span>배너 제작</span>
-        </label>
+        </a>
     </nav>
 
     <iframe src="./home/" name="section" id="section"></iframe>
