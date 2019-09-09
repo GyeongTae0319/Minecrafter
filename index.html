@@ -7,7 +7,7 @@
     <title>Minecrafter</title>
 
     <meta name="author" content="Blro">
-    <meta name="theme-color" content="#2a2b59">
+    <meta name="theme-color" content="#272727">
     <meta name="title" content="Minecrafter">
     <meta name="description" content="마인크래프트 플레이어를 위한 도우미">
     <meta name="subject" content="MC Helper">
@@ -20,11 +20,13 @@
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
+    
+    <script src="./script.js"></script>
 </head>
 <body style="overflow: hidden;">
-    <input type="radio" name="nav_item" id="home" checked>
-    <input type="radio" name="nav_item" id="skinTool">
-    <input type="radio" name="nav_item" id="bannerCreate">
+    <input type="radio" name="nav_item" id="homeSelector" checked>
+    <input type="radio" name="nav_item" id="skinToolSelector">
+    <input type="radio" name="nav_item" id="bannerToolSelector">
     
     <input type="checkbox" name="header_setting" id="navSwitch">
     <input type="checkbox" name="header_setting" id="nightSwitch" checked>
@@ -69,24 +71,20 @@
     </header>
 
     <nav>
-        <a href="./" class="item">
+        <label for="homeSelector" class="item">
             <img src="./assets/images/favicon.png">
             <span>홈</span>
-        </a>
-        <a href="./skin/" class="item">
+        </label>
+        <label for="skinToolSelector" class="item">
             <img src="./assets/images/icons/player_head.png">
             <span>스킨 도구</span>
-        </a>
-        <a href="./banner/" class="item">
+        </label>
+        <label for="bannerToolSelector" class="item">
             <img src="./assets/images/icons/banner.png">
             <span>배너 제작</span>
-        </a>
+        </label>
     </nav>
 
-    <section>
-        <article>
-            <h1>Home</h1>
-        </article>
-    </section>
+    <iframe src="./home/" name="section" id="section"></iframe>
 </body>
 </html>

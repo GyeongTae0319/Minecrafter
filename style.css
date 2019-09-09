@@ -293,7 +293,7 @@ nav>.item>span {
 /*//--- Section Style ---//*/
 
 /*/-- Default --/*/
-section {
+#section {
     z-index: 0;
 
     overflow-y: auto;
@@ -305,17 +305,19 @@ section {
     width: calc(100% - 64px);
     height: calc(100vh - 64px);
 
+    border: none;
+
     color: #000000;
     background-color: #fafafa;
 
     transition: left 0.25s, width 0.25s, color 0.25s, background-color 0.25s;
 }
-#navSwitch:checked ~ section {
+#navSwitch:checked ~ #section {
     left: 256px;
 
     width: calc(100% - 256px);
 }
-#nightSwitch:checked ~ section {
+#nightSwitch:checked ~ #section {
     color: #ffffff;
     background-color: #121212;
 }
