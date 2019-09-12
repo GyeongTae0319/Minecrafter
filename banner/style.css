@@ -6,3 +6,36 @@ section {
 
     font-size: 1.4em;
 }
+
+/*/-- Banner Maker --/*/
+#bannerMaker {
+    position: relative;
+
+    width: 100%;
+}
+#bannerMaker>h1 {
+    margin-bottom: 16px;
+}
+
+/* Workspace */
+#workspace {
+    display: flex;
+    justify-content: center;
+}
+
+/* Preview */
+#preview {
+    position: relative;
+
+    height: 400px;
+
+    margin-right: 4px;
+}
+#preview>canvas {
+    width: 200px;
+    height: 400px;
+
+    image-rendering: pixelated;
+}
+
+/* Color Picker */
