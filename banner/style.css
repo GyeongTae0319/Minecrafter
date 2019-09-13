@@ -20,22 +20,240 @@ section {
 /* Workspace */
 #workspace {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+
+/* Color Picker */
+#colorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#colorPicker>span {
+    cursor: pointer;
+
+    align-self: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 8px;
+
+    border: 3px solid #33333333;
+    border-radius: 26px;
+
+    transition: width 0.1s, height 0.1s, margin 0.1s;
+}
+#nightSwitch:checked ~ section #colorPicker>span {
+    border-color: #cccccc33;
+}
+
+#colorPicker>span.selected {
+    width: 52px;
+    height: 52px;
+
+    margin: 2px;
+}
+
+/* Viewer */
+#viewer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 8px;
 }
 
 /* Preview */
 #preview {
     position: relative;
 
+    width: 200px;
     height: 400px;
 
-    margin-right: 4px;
+    margin-right: 16px;
 }
 #preview>canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     width: 200px;
     height: 400px;
 
     image-rendering: pixelated;
 }
 
-/* Color Picker */
+/* Layers */
+#layers {
+    position: relative;
+
+    width: 352px;
+    height: 400px;
+
+    background-color: #f5f5f5;
+
+    list-style: none;
+
+    transition: background-color 0.25s;
+}
+#nightSwitch:checked ~ section #layers {
+    background-color: #1c1c1c;;
+}
+
+#tools {
+    display: flex;
+    justify-content: flex-end;
+
+    position: absolute;
+
+    width: 100%;
+    height: 40px;
+
+    padding: 4px;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 4px 4px rgb(17, 17, 17, 0.06);
+
+    transition: background-color 0.25s;
+}
+#nightSwitch:checked ~ section #tools {
+    background-color: #272727;
+}
+
+#addLayer {
+    cursor: pointer;
+
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 4px;
+
+    transition: transform 0.25s;
+}
+#addLayer>span {
+    display: block;
+    
+    position: absolute;
+
+    background-color: #606060;
+
+    transition: background-color 0.25s;
+}
+#nightSwitch:checked ~ section #addLayer>span {
+    background-color: #ffffff;
+}
+#addLayer>:nth-child(1) {
+    top: 15px;
+
+    width: 24px;
+    height: 2px;
+}
+#addLayer>:nth-child(2) {
+    left: 15px;
+
+    width: 2px;
+    height: 24px;
+}
+
+#addLayer.opened {
+    transform: rotateZ(45deg);
+}
+
+#layerList {
+    overflow-y: auto;
+
+    position: relative;
+    top: 40px;
+
+    width: 100%;
+    height: 360px;
+
+    margin: 0;
+    padding: 0;
+}
+
+#layerList>li {
+    display: flex;
+
+    padding: 4px;
+    
+    transition: background-color 0.25s;
+}
+#layerList>li>* {
+    align-self: center;
+}
+
+#layerList>li>.thumbnail {
+    width: 26px;
+    height: 54px;
+
+    margin-right: 16px;
+
+    border: 1px solid #c4c4c4;
+
+    background-color: #ffffff;
+
+    image-rendering: pixelated;
+
+    transition: border-color 0.25s;
+}
+#nightSwitch:checked ~ section #layerList>li>.thumbnail {
+    border-color: #333333;
+}
+#layerList>li>.name {
+    flex-grow: 1;
+
+    font-size: 1rem;
+    text-align: start;
+}
+
+#layerList>li>.delete {
+    cursor: pointer;
+
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 4px;
+}
+#layerList>li>.delete>span {
+    display: block;
+
+    position: absolute;
+
+    background-color: #b02e26;
+}
+#layerList>li>.delete>:nth-child(1) {
+    width: 24px;
+    height: 2px;
+
+    transform: translateY(11px) rotateZ(45deg);
+}
+#layerList>li>.delete>:nth-child(2) {
+    width: 2px;
+    height: 24px;
+
+    transform: translateX(11px) rotateZ(45deg);
+}
+
+#layerList>li:hover,
+#layerList>li.selected {
+    background-color: #dcdcdc;
+}
+#nightSwitch:checked ~ section #layerList>li:hover,
+#nightSwitch:checked ~ section #layerList>li.selected {
+    background-color: #333333;
+}
+
+#layerList>li.selected:hover {
+    background-color: #c4c4c4;
+}
+#nightSwitch:checked ~ section #layerList>li.selected:hover {
+    background-color: #484848;
+}

@@ -13,8 +13,34 @@
         <article id="bannerMaker">
             <h1>현수막 제작</h1>
             <div id="workspace">
-                <div id="preview">
-                    <canvas width="20" height="40" class="base"></canvas>
+                <div id="colorPicker">
+                    <span style="background-color: #b02e26" id="red"></span>
+                    <span style="background-color: #f9801d" id="orange"></span>
+                    <span style="background-color: #fed83d" id="yellow"></span>
+                    <span style="background-color: #80c71f" id="lime"></span>
+                    <span style="background-color: #5e7c16" id="green"></span>
+                    <span style="background-color: #3ab3da" id="lightBlue"></span>
+                    <span style="background-color: #169c9c" id="cyan"></span>
+                    <span style="background-color: #3c44aa" id="blue"></span>
+                    <span style="background-color: #8932b8" id="purple"></span>
+                    <span style="background-color: #c74ebd" id="magenta"></span>
+                    <span style="background-color: #f38baa" id="pink"></span>
+                    <span style="background-color: #f9fffe" id="white" class="selected"></span>
+                    <span style="background-color: #9d9d97" id="lightGray"></span>
+                    <span style="background-color: #474f52" id="gray"></span>
+                    <span style="background-color: #1d1d21" id="black"></span>
+                    <span style="background-color: #835432" id="brown"></span>
+                </div>
+                <div id="viewer">
+                    <div id="preview"></div>
+                    <div id="layers">
+                        <div id="tools">
+                            <span id="addLayer">
+                                <span></span><span></span>
+                            </span>
+                        </div>
+                        <ol id="layerList"></ol>
+                    </div>
                 </div>
             </div>
         </article>

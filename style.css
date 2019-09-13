@@ -179,18 +179,18 @@ nav>.item>* {
 }
 
 nav>.item:hover,
-nav>.item.select {
+nav>.item.selected {
     background-color: #dcdcdc;
 }
 #nightSwitch:checked ~ nav>.item:hover,
-#nightSwitch:checked ~ nav>.item.select {
+#nightSwitch:checked ~ nav>.item.selected {
     background-color: #333333;
 }
 
-nav>.item.select:hover {
+nav>.item.selected:hover {
     background-color: #c4c4c4;
 }
-#nightSwitch:checked ~ nav>.item.select:hover {
+#nightSwitch:checked ~ nav>.item.selected:hover {
     background-color: #484848;
 }
 

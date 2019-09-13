@@ -5,6 +5,12 @@
     box-sizing: border-box;
 
     -webkit-tap-highlight-color: transparent;
+
+    /* Diable Select */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 /* Page */
 html {
@@ -64,6 +70,18 @@ h1 {
     background-color: #636363;
 }
 #nightSwitch:checked ~ ::-webkit-scrollbar-thumb:active {
+    background-color: #6e6e6e;
+}
+#nightSwitch:checked ~ * ::-webkit-scrollbar {
+    background-color: #1c1c1c;
+}
+#nightSwitch:checked ~ * ::-webkit-scrollbar-thumb {
+    background-color: #595959;
+}
+#nightSwitch:checked ~ * ::-webkit-scrollbar-thumb:hover {
+    background-color: #636363;
+}
+#nightSwitch:checked ~ * ::-webkit-scrollbar-thumb:active {
     background-color: #6e6e6e;
 }
 
