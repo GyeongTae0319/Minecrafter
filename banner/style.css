@@ -44,7 +44,7 @@ section {
     border: 3px solid #33333333;
     border-radius: 26px;
 
-    transition: width 0.1s, height 0.1s, margin 0.1s;
+    transition: width 0.1s, height 0.1s, margin 0.1s, border-color 0.25s;
 }
 #nightSwitch:checked ~ section #colorPicker>span {
     border-color: #cccccc33;
@@ -160,10 +160,6 @@ section {
     height: 24px;
 }
 
-#addLayer.opened {
-    transform: rotateZ(45deg);
-}
-
 #layerList {
     overflow-y: auto;
 
@@ -208,6 +204,11 @@ section {
 #layerList>li>.name {
     flex-grow: 1;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+
     font-size: 1rem;
     text-align: start;
 }
@@ -217,29 +218,17 @@ section {
 
     position: relative;
 
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
 
-    padding: 4px;
+    margin-right: 10px;
+
+    fill: #606060;
+
+    transition: fill 0.25s;
 }
-#layerList>li>.delete>span {
-    display: block;
-
-    position: absolute;
-
-    background-color: #b02e26;
-}
-#layerList>li>.delete>:nth-child(1) {
-    width: 24px;
-    height: 2px;
-
-    transform: translateY(11px) rotateZ(45deg);
-}
-#layerList>li>.delete>:nth-child(2) {
-    width: 2px;
-    height: 24px;
-
-    transform: translateX(11px) rotateZ(45deg);
+#nightSwitch:checked ~ section #layerList>li>.delete {
+    fill: #ffffff;
 }
 
 #layerList>li:hover,

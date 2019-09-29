@@ -1,381 +1,291 @@
 /*//--- Values ---//*/
+
+/*/ Colors /*/
+class ColorData {
+    /**
+     * @param {String} name 
+     * @param {String} code 
+     */
+    constructor(name, code) {
+        this.name = name;
+        this.code = code;
+    }
+}
 const Color = {
-    red: '#b02e26',
-    orange: '#f9801d',
-    yellow: '#fed83d',
-    lime: '#80c71f',
-    green: '#5e7c16',
-    lightBlue: '#3ab3da',
-    cyan: '#169c9c',
-    blue: '#3c44aa',
-    purple: '#8932b8',
-    magenta: '#c74ebd',
-    pink: '#f38baa',
-    white: '#f9fffe',
-    lightGray: '#9d9d97',
-    gray: '#474f52',
-    black: '#1d1d21',
-    brown: '#835432'
-}
+    red: new ColorData('빨간색', '#b02d26'),
+    orange: new ColorData('주황색', '#f9801d'),
+    yellow: new ColorData('노란색', '#fed83d'),
+    lime: new ColorData('연두색', '#80c71f'),
+    green: new ColorData('초록색', '#5e7c16'),
+    cyan: new ColorData('청록색', '#169c9c'),
+    lightBlue: new ColorData('하늘색', '#3ab3da'),
+    blue: new ColorData('파란색', '#3c44aa'),
+    purple: new ColorData('보라색', '#8932b8'),
+    magenta: new ColorData('자홍색', '#c74ebd'),
+    pink: new ColorData('분홍색', '#f38baa'),
+    white: new ColorData('하얀색', '#ffffff'),
+    lightGray: new ColorData('회백색', '#9d9d97'),
+    gray: new ColorData('회색', '#474f52'),
+    black: new ColorData('검정색', '#1d1d21'),
+    brown: new ColorData('갈색', '#835432')
+};
 
+/*/ Patterns /*/
+class PatternData {
+    /**
+     * @param {String} name 
+     * @param {String} imagePath 
+     */
+    constructor(name, imagePath) {
+        this.name = name;
+        this.img = imagePath;
+    }
+}
 const Pattern = {
-    base: {
-        name: '배경',
-        img: '../assets/images/banner/base.png'
-    },
-    border: {
-        name: '테두리',
-        img: '../assets/images/banner/pattern/border.png'
-    },
-    bricks: {
-        name: '벽돌 무늬',
-        img: '../assets/images/banner/pattern/bricks.png'
-    },
-    circle: {
-        name: '원',
-        img: '../assets/images/banner/pattern/circle.png'
-    },
-    creeper: {
-        name: '크리퍼 모양',
-        img: '../assets/images/banner/pattern/creeper.png'
-    },
-    cross: {
-        name: 'X자형 십자',
-        img: '../assets/images/banner/pattern/cross.png'
-    },
-    curlyBorder: {
-        name: '톱니 테두리',
-        img: '../assets/images/banner/pattern/curly_border.png'
-    },
-    diagonalLeft: {
-        name: '왼쪽 위로부터의 사선 상부',
-        img: '../assets/images/banner/pattern/diagonal_left.png'
-    },
-    diagonalRight: {
-        name: '오른쪽 위로부터의 사선 상부',
-        img: '../assets/images/banner/pattern/diagonal_right.png'
-    },
-    diagonalUpLeft: {
-        name: '오른쪽 위로부터의 사선 하부',
-        img: '../assets/images/banner/pattern/diagonal_up_left.png'
-    },
-    diagonalUpRight: {
-        name: '왼쪽 위로부터의 사선 하부',
-        img: '../assets/images/banner/pattern/diagonal_up_right.png'
-    },
-    flower: {
-        name: '꽃 모양',
-        img: '../assets/images/banner/pattern/flower.png'
-    },
-    globe: {
-        name: '지구 모양',
-        img: '../assets/images/banner/pattern/globe.png'
-    },
-    gradient: {
-        name: '위쪽 그라데이션',
-        img: '../assets/images/banner/pattern/gradient.png'
-    },
-    gradientUp: {
-        name: '아래쪽 그라데이션',
-        img: '../assets/images/banner/pattern/gradient_up.png'
-    },
-    halfHorizontal: {
-        name: '중앙 가로선 상부',
-        img: '../assets/images/banner/pattern/half_horizontal.png'
-    },
-    halfHorizontalBottom: {
-        name: '중앙 가로선 하부',
-        img: '../assets/images/banner/pattern/half_horizontal_bottom.png'
-    },
-    halfVertical: {
-        name: '중앙 세로선 우측',
-        img: '../assets/images/banner/pattern/half_vertical.png'
-    },
-    halfVerticalRight: {
-        name: '중앙 세로선 좌측',
-        img: '../assets/images/banner/pattern/half_vertical_right.png'
-    },
-    mojang: {
-        name: '무언가',
-        img: '../assets/images/banner/pattern/mojang.png'
-    },
-    rhombus: {
-        name: '마름모',
-        img: '../assets/images/banner/pattern/rhombus.png'
-    },
-    skull: {
-        name: '해골 모양',
-        img: '../assets/images/banner/pattern/skull.png'
-    },
-    smallStripes: {
-        name: '세로줄 무늬',
-        img: '../assets/images/banner/pattern/small_stripes.png'
-    },
-    squareBottomLeft: {
-        name: '오른쪽 아래 사각형',
-        img: '../assets/images/banner/pattern/square_bottom_left.png'
-    },
-    squareBottomRight: {
-        name: '왼쪽 아래 사각형',
-        img: '../assets/images/banner/pattern/square_bottom_right.png'
-    },
-    squareTopLeft: {
-        name: '오른쪽 위 사각형',
-        img: '../assets/images/banner/pattern/square_top_left.png'
-    },
-    squareTopRight: {
-        name: '왼쪽 위 사각형',
-        img: '../assets/images/banner/pattern/square_top_right.png'
-    },
-    straightCross: {
-        name: '십자',
-        img: '../assets/images/banner/pattern/straight_cross.png'
-    },
-    stripeBottom: {
-        name: '아래쪽 가로띠',
-        img: '../assets/images/banner/pattern/stripe_bottom.png'
-    },
-    stripeCenter: {
-        name: '중앙 세로띠',
-        img: '../assets/images/banner/pattern/stripe_center.png'
-    },
-    stripeDownLeft: {
-        name: '왼쪽 위로부터의 사선',
-        img: '../assets/images/banner/pattern/stripe_downleft.png'
-    },
-    stripeDonwRight: {
-        name: '오른쪽 위로부터의 사선',
-        img: '../assets/images/banner/pattern/stripe_downright.png'
-    },
-    stripeLeft: {
-        name: '오른쪽 세로띠',
-        img: '../assets/images/banner/pattern/stripe_left.png'
-    },
-    stripeMiddle: {
-        name: '중앙 가로띠',
-        img: '../assets/images/banner/pattern/stripe_middle.png'
-    },
-    stripeRight: {
-        name: '왼쪽 세로띠',
-        img: '../assets/images/banner/pattern/stripe_right.png'
-    },
-    stripeTop: {
-        name: '위쪽 세로띠',
-        img: '../assets/images/banner/pattern/stripe_top.png'
-    },
-    triangleBottom: {
-        name: '하단 삼각형',
-        img: '../assets/images/banner/pattern/triangle_bottom.png'
-    },
-    triangleTop: {
-        name: '상단 삼각형',
-        img: '../assets/images/banner/pattern/triangle_top.png'
-    },
-    trianglesBottom: {
-        name: '아래쪽 톱니 모양',
-        img: '../assets/images/banner/pattern/triangles_bottom.png'
-    },
-    trianglesTop: {
-        name: '위쪽 톱니 모양',
-        img: '../assets/images/banner/pattern/triangles_top.png'
-    }
-}
+    base: new PatternData('배경', '../assets/images/banner/base.png'),
+    border: new PatternData('테두리', '../assets/images/banner/pattern/border.png'),
+    bricks: new PatternData('벽돌 무늬', '../assets/images/banner/pattern/bricks.png'),
+    circle: new PatternData('원', '../assets/images/banner/pattern/circle.png'),
+    creeper: new PatternData('크리퍼 모양', '../assets/images/banner/pattern/creeper.png'),
+    cross: new PatternData('X자형 십자', '../assets/images/banner/pattern/cross.png'),
+    curlyBorder: new PatternData('톱니 테두리', '../assets/images/banner/pattern/curly_border.png'),
+    diagonalLeft: new PatternData('왼쪽 위로부터의 사선 상부', '../assets/images/banner/pattern/diagonal_left.png'),
+    diagonalRight: new PatternData('오른쪽 위로부터의 사선 상부', '../assets/images/banner/pattern/diagonal_right.png'),
+    diagonalUpLeft: new PatternData('오른쪽 위로부터의 사선 하부', '../assets/images/banner/pattern/diagonal_up_left.png'),
+    diagonalUpRight: new PatternData('왼쪽 위로부터의 사선 하부', '../assets/images/banner/pattern/diagonal_up_right.png'),
+    flower: new PatternData('꽃 모양', '../assets/images/banner/pattern/flower.png'),
+    globe: new PatternData('지구 모양', '../assets/images/banner/pattern/globe.png'),
+    gradient: new PatternData('위쪽 그라데이션', '../assets/images/banner/pattern/gradient.png'),
+    gradientUp: new PatternData('아래쪽 그라데이션', '../assets/images/banner/pattern/gradient_up.png'),
+    halfHorizontal: new PatternData('중앙 가로선 상부', '../assets/images/banner/pattern/half_horizontal.png'),
+    halfHorizontalBottom: new PatternData('중앙 가로선 하부', '../assets/images/banner/pattern/half_horizontal_bottom.png'),
+    halfVertical: new PatternData('중앙 세로선 우측', '../assets/images/banner/pattern/half_vertical.png'),
+    halfVerticalRight: new PatternData('중앙 세로선 좌측', '../assets/images/banner/pattern/half_vertical_right.png'),
+    mojang: new PatternData('무언가', '../assets/images/banner/pattern/mojang.png'),
+    rhombus: new PatternData('마름모', '../assets/images/banner/pattern/rhombus.png'),
+    skull: new PatternData('해골 모양', '../assets/images/banner/pattern/skull.png'),
+    smallStripes: new PatternData('세로줄 무늬', '../assets/images/banner/pattern/small_stripes.png'),
+    squareBottomLeft: new PatternData('오른쪽 아래 사각형', '../assets/images/banner/pattern/square_bottom_left.png'),
+    squareBottomRight: new PatternData('왼쪽 아래 사각형', '../assets/images/banner/pattern/square_bottom_right.png'),
+    squareTopLeft: new PatternData('오른쪽 위 사각형', '../assets/images/banner/pattern/square_top_left.png'),
+    squareTopRight: new PatternData('왼쪽 위 사각형', '../assets/images/banner/pattern/square_top_right.png'),
+    straightCross: new PatternData('십자', '../assets/images/banner/pattern/straight_cross.png'),
+    stripeBottom: new PatternData('아래쪽 가로띠', '../assets/images/banner/pattern/stripe_bottom.png'),
+    stripeCenter: new PatternData('중앙 세로띠', '../assets/images/banner/pattern/stripe_center.png'),
+    stripeDownLeft: new PatternData('왼쪽 위로부터의 사선', '../assets/images/banner/pattern/stripe_downleft.png'),
+    stripeDonwRight: new PatternData('오른쪽 위로부터의 사선', '../assets/images/banner/pattern/stripe_downright.png'),
+    stripeLeft: new PatternData('오른쪽 세로띠', '../assets/images/banner/pattern/stripe_left.png'),
+    stripeMiddle: new PatternData('중앙 가로띠', '../assets/images/banner/pattern/stripe_middle.png'),
+    stripeRight: new PatternData('왼쪽 세로띠', '../assets/images/banner/pattern/stripe_right.png'),
+    stripeTop: new PatternData('위쪽 세로띠', '../assets/images/banner/pattern/stripe_top.png'),
+    triangleBottom: new PatternData('하단 삼각형', '../assets/images/banner/pattern/triangle_bottom.png'),
+    triangleTop: new PatternData('상단 삼각형', '../assets/images/banner/pattern/triangle_top.png'),
+    trianglesBottom: new PatternData('아래쪽 톱니 모양', '../assets/images/banner/pattern/triangles_bottom.png'),
+    trianglesTop: new PatternData('위쪽 톱니 모양', '../assets/images/banner/pattern/triangles_top.png')
+};
+
+/*/ Svg Icons /*/
+const Icon = {
+    trashCan: `<path d="M446,70H344.8V53.5c0-29.5-24-53.5-53.5-53.5h-96.2c-29.5,0-53.5,24-53.5,53.5V70H40.4c-7.5,0-13.5,6-13.5,13.5S32.9,97,40.4,97h24.4v317.2c0,39.8,32.4,72.2,72.2,72.2h212.4c39.8,0,72.2-32.4,72.2-72.2V97H446c7.5,0,13.5-6,13.5-13.5S453.5,70,446,70z M168.6,53.5c0-14.6,11.9-26.5,26.5-26.5h96.2c14.6,0,26.5,11.9,26.5,26.5V70H168.6V53.5z M394.6,414.2c0,24.9-20.3,45.2-45.2,45.2H137c-24.9,0-45.2-20.3-45.2-45.2V97h302.9v317.2H394.6z"></path><path d="M243.2,411c7.5,0,13.5-6,13.5-13.5V158.9c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v238.5C229.7,404.9,235.7,411,243.2,411z"></path><path d="M155.1,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9C141.6,390.1,147.7,396.1,155.1,396.1z"></path><path d="M331.3,396.1c7.5,0,13.5-6,13.5-13.5V173.7c0-7.5-6-13.5-13.5-13.5s-13.5,6-13.5,13.5v208.9C317.8,390.1,323.8,396.1,331.3,396.1z"></path>`
+};
 
 
-/*//--- Classes ---//*/
-
-/*/-- Banner --/*/
-/* Layer */
+/*//--- Banner ---//*/
 class BannerLayer {
-    constructor(pattern, color) {
+    /**
+     * @param {PatternData} pattern 
+     * @param {ColorData} color 
+     */
+    constructor(pattern, color, index) {
+        this.index = index;
         this.pattern = pattern;
         this.color = color;
 
-        // Layer Canvas
-        this.canvas = document.createElement('canvas');
-        this.canvas.width = 20;
-        this.canvas.height = 40;
-        this.canvas.classList.add('pattern');
-        document.getElementById('preview').appendChild(this.canvas);
+        this.setup();
+    }
 
-        /* Layer */
-        // Item
+    setup() {
+        this.setupPreview();
+        this.setupLayerItem();
+
+        this.drawCanvas();
+    }
+
+    setupPreview() {
+        this.preview = document.createElement('canvas');
+        this.preview.width = 20;
+        this.preview.height = 40;
+
+        document.getElementById('preview').appendChild(this.preview);
+    }
+
+    setupLayerItem() {
         this.layerItem = document.createElement('li');
-        this.layerItem.addEventListener('click', (e) => {
-            if (this.layerItem.classList.contains('selected')) {
-                e.preventDefault();
-            }
+        this.layerItem.classList.add('layer');
+        if (this.pattern == Pattern.base) {
+            this.layerItem.id = 'base';
+        }
 
-            var layerItems = Array.from(document.querySelectorAll('#layerList>li'));
-            var index = layerItems.indexOf(this.layerItem);
-
-            if (!layerItems[index]) {
-                return;
-            }
-            
-            selectedLayer = Banner.length - index - 1;
-            layerItems.forEach(item => {
-                item.classList.remove('selected');
-            });
-            layerItems[index].classList.add('selected');
-            
-            var colors = Array.from(document.querySelectorAll('#colorPicker>span'));
-            colors.forEach(color => {
-                color.classList.remove('selected');
-            });
-            
-            var colorIndex;
-            var colorKeys = Object.keys(Color);
-            for (let i = 0; i < colorKeys.length; i++) {
-                if (Color[colorKeys[i]] == this.color) {
-                    colorIndex = i;
-                    break;
-                }
-            }
-            colors[colorIndex].classList.add('selected');
+        this.layerThumbnail = document.createElement('canvas');
+        this.layerThumbnail.width = 20;
+        this.layerThumbnail.height = 40;
+        this.layerThumbnail.classList.add('thumbnail');
+        this.layerThumbnail.addEventListener('click', () => {
+            Banner.currentLayer = this.index;
         });
-        var layerList = document.getElementById('layerList');
-        layerList.insertBefore(this.layerItem, layerList.childNodes[0]);
-        
-        // Thumbnail
-        this.thumbnail = document.createElement('canvas');
-        this.thumbnail.width = 20;
-        this.thumbnail.height = 40;
-        this.thumbnail.classList.add('thumbnail');
-        this.layerItem.appendChild(this.thumbnail);
+        this.layerItem.appendChild(this.layerThumbnail);
 
-        // Name
-        this.patternName = document.createElement('span');
-        this.patternName.innerHTML = this.pattern.name;
-        this.patternName.classList.add('name');
-        this.layerItem.appendChild(this.patternName);
+        this.layerName = document.createElement('span');
+        this.layerName.classList.add('name');
+        this.layerName.innerHTML = this.color.name + ' ' + this.pattern.name;
+        this.layerName.addEventListener('click', () => {
+            Banner.currentLayer = this.index;
+        });
+        this.layerItem.appendChild(this.layerName);
 
-        if (pattern == Pattern.base) {
-            this.canvas.id = 'base';
-            this.layerItem.classList.add('selected');
-            this.layerItem.id = 'background';
-        }
-        else {
-            // Delete Icon
-            var deleteIcon = document.createElement('span');
-            deleteIcon.classList.add('delete');
-            deleteIcon.appendChild(document.createElement('span'));
-            deleteIcon.appendChild(document.createElement('span'));
-            deleteIcon.addEventListener('click', () => {
-                var deleteIcons = Array.from(document.querySelectorAll('#layerList>li>.delete'));
-                var index = Banner.length - deleteIcons.indexOf(this.layerItem.lastChild) - 1;
-
-                if (Banner[index].layerItem.classList.contains('selected')) {
-                    Banner[index - 1].layerItem.classList.add('selected');
-                    
-                    var colors = Array.from(document.querySelectorAll('#colorPicker>span'));
-                    colors.forEach(color => {
-                        color.classList.remove('selected');
-                    });
-                    
-                    var colorIndex;
-                    var colorKeys = Object.keys(Color);
-                    for (let i = 0; i < colorKeys.length; i++) {
-                        if (Color[colorKeys[i]] == Banner[index - 1].color) {
-                            colorIndex = i;
-                            break;
-                        }
-                    }
-                    colors[colorIndex].classList.add('selected');
-                }
-                Banner[index].canvas.remove();
-                Banner[index].layerItem.remove();
-                Banner.splice(index, 1);
+        if (this.pattern != Pattern.base) {
+            var deleteButton = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            deleteButton.classList.add('delete');
+            deleteButton.setAttribute('viewBox', '0 0 486.4 486.4');
+            deleteButton.innerHTML = Icon.trashCan;
+            deleteButton.addEventListener('click', (e) => {
+                this.delete();
             });
-            this.layerItem.appendChild(deleteIcon);
+            this.layerItem.appendChild(deleteButton);
         }
 
-        this.setLayer(pattern, color);
+        var layerList = document.getElementById('layerList');
+        layerList.insertBefore(this.layerItem, layerList.firstChild);
     }
 
-    drawLayer() {
-        var canvasContext = this.canvas.getContext('2d');
-        var thumbnailContext = this.thumbnail.getContext('2d');
-        var img = new Image();
-        img.addEventListener('load', () => {
-            canvasContext.clearRect(0, 0, 20, 40);
-            thumbnailContext.clearRect(0, 0, 20, 40);
-            canvasContext.drawImage(img, 0, 0, 20, 40);
-            thumbnailContext.drawImage(img, 0, 0, 20, 40);
+    drawCanvas() {
 
-            canvasContext.globalCompositeOperation = 'multiply';
-            thumbnailContext.globalCompositeOperation = 'multiply';
-            canvasContext.fillStyle = this.color;
-            thumbnailContext.fillStyle = this.color;
-            canvasContext.fillRect(0, 0, 20, 40);
-            thumbnailContext.fillRect(0, 0, 20, 40);
-
-            if (this.pattern != Pattern.base) {
-                canvasContext.globalCompositeOperation = 'destination-in';
-                thumbnailContext.globalCompositeOperation = 'destination-in';
-                canvasContext.drawImage(img, 0, 0, 20, 40);
-                thumbnailContext.drawImage(img, 0, 0, 20, 40);
-            }
-        }, false);
-        img.src = this.pattern.img;
-        this.patternName.innerHTML = this.pattern.name;
     }
 
-    setLayer(pattern, color) {
+    /**
+     * @param {PatternData} pattern 
+     */
+    changePattern(pattern) {
         this.pattern = pattern;
-        this.color = color;
-        this.drawLayer();
+        this.layerName.innerHTML = this.color.name + ' ' + this.pattern.name;
+        this.drawCanvas();
     }
 
-    setPattern(pattern) {
-        this.pattern = pattern;
-        this.drawLayer();
+    /**
+     * @param {ColorData} color 
+     */
+    changeColor(color) {
+        this.color = color;
+        this.layerName.innerHTML = this.color.name + ' ' + this.pattern.name;
+        this.drawCanvas();
     }
 
-    setColor(color) {
-        this.color = color;
-        this.drawLayer();
+    delete() {
+        this.preview.parentElement.removeChild(this.preview);
+        this.layerItem.parentElement.removeChild(this.layerItem);
+
+        if (this.index <= Banner.currentLayer) {
+            Banner.currentLayer--;
+        }
+        
+        for (var i = this.index + 1; i < Banner.layers.length; i++) {
+            Banner.layers[i].index--;
+        }
+
+        Banner.layers.splice(this.index, 1);
+        
+        checkSelectedLayer();
     }
 }
 
-/* Banner Data */
-var Banner = [
-    new BannerLayer(Pattern.base, Color.white),
-    new BannerLayer(Pattern.gradientUp, Color.lightBlue),
-    new BannerLayer(Pattern.globe, Color.lime)
-];
-var selectedLayer = 0;
+const Banner = {
+    layers: [new BannerLayer(Pattern.base, Color.white, 0)],
+    currentLayer: 0,
 
+    /**
+     * @param {PatternData} pattern 
+     * @param {ColorData} color 
+     */
+    addLayer() {
+        this.layers.push(new BannerLayer(Pattern.border, Color.white, this.layers.length));
+    },
 
-/*//--- Functions ---//*/
+    /**
+     * @param {PatternData} pattern 
+     */
+    changePattern(pattern) {
+        this.layers[this.currentLayer].changePattern(pattern);
+    },
 
-// Layer Item Click Event
-function selectLayerItem(item) {
-    selectedLayer = Banner.indexOf(item);
-}
+    /**
+     * @param {ColorData} color 
+     */
+    changeColor(color) {
+        this.layers[this.currentLayer].changeColor(color);
+    }
+};
 
 
 /*//--- On Click Event ---//*/
 
-/*/-- Color Picker --/*/
-var colors = document.querySelectorAll('#colorPicker>span');
-colors.forEach(color => {
-    color.addEventListener('click', (e) => {
-        if (color.classList.contains('selected')) {
+/*/ Color Picker /*/
+var colorPicker = document.getElementById('colorPicker');
+var colors = new Array();
+Object.keys(Color).forEach(color => {
+    var colorObj = document.createElement('span');
+    colorObj.id = color;
+    colorObj.style.backgroundColor = Color[color].code;
+
+    colorObj.addEventListener('click', (e) => {
+        if (Banner.layers[Banner.currentLayer].color == color) {
             e.preventDefault();
             return;
         }
-
-        colors.forEach(element => {
-            element.classList.remove('selected');
-        });
-        color.classList.add('selected');
-
-        Banner[selectedLayer].setColor(Color[color.id]);
+        Banner.changeColor(Color[color]);
     });
+
+    colors.push(colorObj);
+    colorPicker.appendChild(colorObj);
 });
 
+/*/ Add Layer /*/
 var addLayer = document.getElementById('addLayer');
-addLayer.addEventListener('click', (e) => {
-    addLayer.classList.toggle('opened');
+addLayer.addEventListener('click', () => {
+    Banner.addLayer();
 });
+
+
+/*//--- Set Interval ---//*/
+
+/*/ Color Picker Update /*/
+var wasColor = null;
+colorPickerUpdate = setInterval(() => {
+    console.log(Banner.currentLayer);
+    var currentColor = Banner.layers[Banner.currentLayer].color;
+    if (wasColor != currentColor) {
+        colors.forEach(color => {
+            if (Color[color.id] == currentColor)
+                color.classList.add('selected');
+            else
+                color.classList.remove('selected');
+        });
+    }
+    wasColor = currentColor;
+}, 1);
+
+/*/ Selected Layer Update /*/
+var wasLayer = null;
+function checkSelectedLayer() {
+    Banner.layers.forEach(layer => {
+        if (Banner.layers[Banner.currentLayer].index == layer.index)
+            layer.layerItem.classList.add('selected');
+        else
+            layer.layerItem.classList.remove('selected');
+    });
+}
+selectedLayerUpdate = setInterval(() => {
+    if (wasLayer != Banner.currentLayer) {
+        checkSelectedLayer();
+    }
+    wasLayer = Banner.currentLayer;
+}, 1);
