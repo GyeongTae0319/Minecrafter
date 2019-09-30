@@ -42,7 +42,7 @@ class PatternData {
     }
 }
 const Pattern = {
-    base: new PatternData('배경', '../assets/images/banner/base.png'),
+    base: new PatternData('배경', '../assets/images/banner/pattern/base.png'),
     border: new PatternData('테두리', '../assets/images/banner/pattern/border.png'),
     bricks: new PatternData('벽돌 무늬', '../assets/images/banner/pattern/bricks.png'),
     circle: new PatternData('원', '../assets/images/banner/pattern/circle.png'),
@@ -159,39 +159,28 @@ class BannerLayer {
     }
 
     drawCanvas() {
-        console.log('test');
-
-        var previewContext = this.preview.getContext('2d');
-        var thumbnailContext = this.layerThumbnail.getContext('2d');
+        var contexts = [this.preview.getContext('2d'), this.layerThumbnail.getContext('2d')];
         
-        previewContext.clearRect(0, 0, 20, 40);
-        thumbnailContext.clearRect(0, 0, 20, 40);
+        contexts.forEach(context => {
+            context.clearRect(0, 0, 20, 40);
 
-        var baseImage = new Image();
-        baseImage.addEventListener('load', () => {
-            previewContext.drawImage(baseImage, 0, 0, 20, 40);
-            previewContext.globalCompositeOperation = 'multiply';
-            previewContext.fillStyle = this.color.code;
-            previewContext.fillRect(0, 0, 20, 40);
+            var backgroundImage = new Image();
+            backgroundImage.addEventListener('load', () => {
+                context.drawImage(backgroundImage, 0, 0, 20, 40);
+                context.globalCompositeOperation = 'multiply';
+                context.fillStyle = this.color.code;
+                context.fillRect(0, 0, 20, 40);
 
-            thumbnailContext.drawImage(baseImage, 0, 0, 20, 40);
-            thumbnailContext.globalCompositeOperation = 'multiply';
-            thumbnailContext.fillStyle = this.color.code;
-            thumbnailContext.fillRect(0, 0, 20, 40);
+                var patternImage = new Image();
+                patternImage.addEventListener('load', () => {
+                    context.globalCompositeOperation = 'destination-atop';
+                    context.drawImage(patternImage, 0, 0, 20, 40);
+                }, false);
+                patternImage.src = this.pattern.img;
+            }, false);
+            backgroundImage.src = '../assets/images/banner/base.png';
+
         });
-        baseImage.src = '../assets/images/banner/base.png';
-
-        if (this.pattern != Pattern.base) {
-            var patternImage = new Image();
-            patternImage.addEventListener('load', () => {
-                previewContext.globalCompositeOperation = 'destination-atop';
-                previewContext.drawImage(patternImage, 0, 0, 20, 40);
-
-                thumbnailContext.globalCompositeOperation = 'destination-atop';
-                thumbnailContext.drawImage(patternImage, 0, 0, 20, 40);
-            });
-            patternImage.src = this.pattern.img;
-        }
     }
 
     /**
@@ -240,6 +229,7 @@ const Banner = {
      */
     addLayer() {
         this.layers.push(new BannerLayer(Pattern.border, Color.white, this.layers.length));
+        this.currentLayer = this.layers.length - 1;
     },
 
     /**
