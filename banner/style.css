@@ -57,6 +57,30 @@ section {
     margin: 2px;
 }
 
+/* Pattern Picker */
+#patternPicker {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 832px;
+
+    margin: 0 auto;
+}
+
+#patternPicker>img {
+    cursor: pointer;
+
+    width: 48px;
+    height: 96px;
+
+    margin: 8px;
+
+    background-color: black;
+
+    image-rendering: pixelated;
+}
+
 /* Viewer */
 #viewer {
     display: flex;

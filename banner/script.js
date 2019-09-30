@@ -163,6 +163,9 @@ class BannerLayer {
 
         var previewContext = this.preview.getContext('2d');
         var thumbnailContext = this.layerThumbnail.getContext('2d');
+        
+        previewContext.clearRect(0, 0, 20, 40);
+        thumbnailContext.clearRect(0, 0, 20, 40);
 
         var baseImage = new Image();
         baseImage.addEventListener('load', () => {
@@ -178,15 +181,17 @@ class BannerLayer {
         });
         baseImage.src = '../assets/images/banner/base.png';
 
-        var patternImage = new Image();
-        patternImage.addEventListener('load', () => {
-            previewContext.globalCompositeOperation = 'source-in';
-            previewContext.drawImage(patternImage, 0, 0, 20, 40);
+        if (this.pattern != Pattern.base) {
+            var patternImage = new Image();
+            patternImage.addEventListener('load', () => {
+                previewContext.globalCompositeOperation = 'destination-atop';
+                previewContext.drawImage(patternImage, 0, 0, 20, 40);
 
-            thumbnailContext.globalCompositeOperation = 'source-in';
-            thumbnailContext.drawImage(patternImage, 0, 0, 20, 40);
-        });
-        patternImage.src = this.pattern.img;
+                thumbnailContext.globalCompositeOperation = 'destination-atop';
+                thumbnailContext.drawImage(patternImage, 0, 0, 20, 40);
+            });
+            patternImage.src = this.pattern.img;
+        }
     }
 
     /**
@@ -264,7 +269,7 @@ Object.keys(Color).forEach(color => {
     colorObj.style.backgroundColor = Color[color].code;
 
     colorObj.addEventListener('click', (e) => {
-        if (Banner.layers[Banner.currentLayer].color == color) {
+        if (Banner.layers[Banner.currentLayer].color == Color[color]) {
             e.preventDefault();
             return;
         }
@@ -273,6 +278,31 @@ Object.keys(Color).forEach(color => {
 
     colors.push(colorObj);
     colorPicker.appendChild(colorObj);
+});
+
+/*/ Pattern Picker /*/
+var patternPicker = document.getElementById('patternPicker');
+var patterns = new Array();
+Object.keys(Pattern).forEach(pattern => {
+    if (Pattern[pattern] == Pattern.base) {
+        return;
+    }
+
+    var patternObj = document.createElement('img');
+    patternObj.id = pattern;
+    patternObj.src = Pattern[pattern].img;
+
+    patternObj.addEventListener('click', (e) => {
+        if (Banner.layers[Banner.currentLayer].pattern == Pattern[pattern] ||
+            Banner.currentLayer == 0) {
+            e.preventDefault();
+            return;
+        }
+        Banner.changePattern(Pattern[pattern]);
+    });
+
+    patterns.push(patternObj);
+    patternPicker.appendChild(patternObj);
 });
 
 /*/ Add Layer /*/
