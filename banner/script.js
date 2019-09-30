@@ -159,7 +159,34 @@ class BannerLayer {
     }
 
     drawCanvas() {
+        console.log('test');
 
+        var previewContext = this.preview.getContext('2d');
+        var thumbnailContext = this.layerThumbnail.getContext('2d');
+
+        var baseImage = new Image();
+        baseImage.addEventListener('load', () => {
+            previewContext.drawImage(baseImage, 0, 0, 20, 40);
+            previewContext.globalCompositeOperation = 'multiply';
+            previewContext.fillStyle = this.color.code;
+            previewContext.fillRect(0, 0, 20, 40);
+
+            thumbnailContext.drawImage(baseImage, 0, 0, 20, 40);
+            thumbnailContext.globalCompositeOperation = 'multiply';
+            thumbnailContext.fillStyle = this.color.code;
+            thumbnailContext.fillRect(0, 0, 20, 40);
+        });
+        baseImage.src = '../assets/images/banner/base.png';
+
+        var patternImage = new Image();
+        patternImage.addEventListener('load', () => {
+            previewContext.globalCompositeOperation = 'source-in';
+            previewContext.drawImage(patternImage, 0, 0, 20, 40);
+
+            thumbnailContext.globalCompositeOperation = 'source-in';
+            thumbnailContext.drawImage(patternImage, 0, 0, 20, 40);
+        });
+        patternImage.src = this.pattern.img;
     }
 
     /**
@@ -187,13 +214,13 @@ class BannerLayer {
         if (this.index <= Banner.currentLayer) {
             Banner.currentLayer--;
         }
-        
+
         for (var i = this.index + 1; i < Banner.layers.length; i++) {
             Banner.layers[i].index--;
         }
 
         Banner.layers.splice(this.index, 1);
-        
+
         checkSelectedLayer();
     }
 }
@@ -260,7 +287,6 @@ addLayer.addEventListener('click', () => {
 /*/ Color Picker Update /*/
 var wasColor = null;
 colorPickerUpdate = setInterval(() => {
-    console.log(Banner.currentLayer);
     var currentColor = Banner.layers[Banner.currentLayer].color;
     if (wasColor != currentColor) {
         colors.forEach(color => {
