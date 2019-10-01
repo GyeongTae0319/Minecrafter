@@ -236,6 +236,7 @@ class BannerLayer {
 
     delete() {
         this.preview.parentElement.removeChild(this.preview);
+        this.shieldPreview.parentElement.removeChild(this.shieldPreview);
         this.layerItem.parentElement.removeChild(this.layerItem);
 
         if (this.index <= Banner.currentLayer) {
