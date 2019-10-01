@@ -262,6 +262,10 @@ const Banner = {
      * @param {ColorData} color 
      */
     addLayer() {
+        if (this.layers.length > 16) {
+            return;
+        }
+
         this.layers.push(new BannerLayer(Pattern.border, Color.white, this.layers.length));
         this.currentLayer = this.layers.length - 1;
     },
