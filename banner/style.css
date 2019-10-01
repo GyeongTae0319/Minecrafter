@@ -65,7 +65,7 @@ section {
 
     max-width: 728px;
 
-    margin: 4px auto;
+    margin: 8px auto;
 }
 
 #patternPicker>img {
@@ -223,11 +223,18 @@ section {
 }
 
 #layerList>li {
+    cursor: pointer;
+
     display: flex;
 
     padding: 4px;
     
+    border-top: 1px solid #00000000;
+    
     transition: background-color 0.25s;
+}
+#layerList>li.drag-over {
+    border-top-color: #606060;
 }
 #layerList>li>* {
     align-self: center;

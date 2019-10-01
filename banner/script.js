@@ -158,7 +158,28 @@ class BannerLayer {
                 this.delete();
             });
             this.layerItem.appendChild(deleteButton);
+
+            this.layerItem.draggable = true;
+            this.layerItem.addEventListener('dragstart', () => {
+                this.layerItem.style.opacity = '0.5';
+            });
+            this.layerItem.addEventListener('dragend', () => {
+                this.layerItem.style.opacity = '1';
+            });
         }
+        
+        this.layerItem.addEventListener('dragover', () => {
+            this.layerItem.classList.add('drag-over');
+        });
+        this.layerItem.addEventListener('dragleave', () => {
+            this.layerItem.classList.remove('drag-over');
+        });
+        this.layerItem.addEventListener('dragend', (e) => {
+            console.log(e);
+        });
+        this.layerItem.addEventListener('drop', (e) => {
+            console.log(e);
+        });
 
         var layerList = document.getElementById('layerList');
         layerList.insertBefore(this.layerItem, layerList.firstChild);
@@ -327,6 +348,9 @@ Object.keys(Pattern).forEach(pattern => {
             return;
         }
         Banner.changePattern(Pattern[pattern]);
+    });
+    patternObj.addEventListener('dragstart', (e) => {
+        e.preventDefault();
     });
 
     patterns.push(patternObj);
