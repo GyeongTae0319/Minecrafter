@@ -114,6 +114,26 @@ section {
     image-rendering: pixelated;
 }
 
+/* Preview Shield */
+#previewShield {
+    position: relative;
+
+    width: 200px;
+    height: 400px;
+
+    margin-right: 16px;
+}
+#previewShield>canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    image-rendering: pixelated;
+}
+
 /* Layers */
 #layers {
     position: relative;

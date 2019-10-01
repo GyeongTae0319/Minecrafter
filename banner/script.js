@@ -35,10 +35,12 @@ class PatternData {
     /**
      * @param {String} name 
      * @param {String} imagePath 
+     * @param {String} shieldImagePath
      */
-    constructor(name, imagePath) {
+    constructor(name, imagePath, shieldImagePath) {
         this.name = name;
         this.img = imagePath;
+        this.shieldImg = shieldImagePath;
     }
 }
 const Pattern = {
