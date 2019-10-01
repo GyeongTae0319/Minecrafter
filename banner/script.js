@@ -44,46 +44,46 @@ class PatternData {
     }
 }
 const Pattern = {
-    base: new PatternData('배경', '../assets/images/banner/patterns/base.png'),
-    border: new PatternData('테두리', '../assets/images/banner/patterns/border.png'),
-    bricks: new PatternData('벽돌 무늬', '../assets/images/banner/patterns/bricks.png'),
-    circle: new PatternData('원', '../assets/images/banner/patterns/circle.png'),
-    creeper: new PatternData('크리퍼 모양', '../assets/images/banner/patterns/creeper.png'),
-    cross: new PatternData('X자형 십자', '../assets/images/banner/patterns/cross.png'),
-    curlyBorder: new PatternData('톱니 테두리', '../assets/images/banner/patterns/curly_border.png'),
-    diagonalLeft: new PatternData('왼쪽 위로부터의 사선 상부', '../assets/images/banner/patterns/diagonal_left.png'),
-    diagonalRight: new PatternData('오른쪽 위로부터의 사선 상부', '../assets/images/banner/patterns/diagonal_right.png'),
-    diagonalUpLeft: new PatternData('오른쪽 위로부터의 사선 하부', '../assets/images/banner/patterns/diagonal_up_left.png'),
-    diagonalUpRight: new PatternData('왼쪽 위로부터의 사선 하부', '../assets/images/banner/patterns/diagonal_up_right.png'),
-    flower: new PatternData('꽃 모양', '../assets/images/banner/patterns/flower.png'),
-    globe: new PatternData('지구 모양', '../assets/images/banner/patterns/globe.png'),
-    gradient: new PatternData('위쪽 그라데이션', '../assets/images/banner/patterns/gradient.png'),
-    gradientUp: new PatternData('아래쪽 그라데이션', '../assets/images/banner/patterns/gradient_up.png'),
-    halfHorizontal: new PatternData('중앙 가로선 상부', '../assets/images/banner/patterns/half_horizontal.png'),
-    halfHorizontalBottom: new PatternData('중앙 가로선 하부', '../assets/images/banner/patterns/half_horizontal_bottom.png'),
-    halfVertical: new PatternData('중앙 세로선 우측', '../assets/images/banner/patterns/half_vertical.png'),
-    halfVerticalRight: new PatternData('중앙 세로선 좌측', '../assets/images/banner/patterns/half_vertical_right.png'),
-    mojang: new PatternData('무언가', '../assets/images/banner/patterns/mojang.png'),
-    rhombus: new PatternData('마름모', '../assets/images/banner/patterns/rhombus.png'),
-    skull: new PatternData('해골 모양', '../assets/images/banner/patterns/skull.png'),
-    smallStripes: new PatternData('세로줄 무늬', '../assets/images/banner/patterns/small_stripes.png'),
-    squareBottomLeft: new PatternData('오른쪽 아래 사각형', '../assets/images/banner/patterns/square_bottom_left.png'),
-    squareBottomRight: new PatternData('왼쪽 아래 사각형', '../assets/images/banner/patterns/square_bottom_right.png'),
-    squareTopLeft: new PatternData('오른쪽 위 사각형', '../assets/images/banner/patterns/square_top_left.png'),
-    squareTopRight: new PatternData('왼쪽 위 사각형', '../assets/images/banner/patterns/square_top_right.png'),
-    straightCross: new PatternData('십자', '../assets/images/banner/patterns/straight_cross.png'),
-    stripeBottom: new PatternData('아래쪽 가로띠', '../assets/images/banner/patterns/stripe_bottom.png'),
-    stripeCenter: new PatternData('중앙 세로띠', '../assets/images/banner/patterns/stripe_center.png'),
-    stripeDownLeft: new PatternData('왼쪽 위로부터의 사선', '../assets/images/banner/patterns/stripe_downleft.png'),
-    stripeDonwRight: new PatternData('오른쪽 위로부터의 사선', '../assets/images/banner/patterns/stripe_downright.png'),
-    stripeLeft: new PatternData('오른쪽 세로띠', '../assets/images/banner/patterns/stripe_left.png'),
-    stripeMiddle: new PatternData('중앙 가로띠', '../assets/images/banner/patterns/stripe_middle.png'),
-    stripeRight: new PatternData('왼쪽 세로띠', '../assets/images/banner/patterns/stripe_right.png'),
-    stripeTop: new PatternData('위쪽 세로띠', '../assets/images/banner/patterns/stripe_top.png'),
-    triangleBottom: new PatternData('하단 삼각형', '../assets/images/banner/patterns/triangle_bottom.png'),
-    triangleTop: new PatternData('상단 삼각형', '../assets/images/banner/patterns/triangle_top.png'),
-    trianglesBottom: new PatternData('아래쪽 톱니 모양', '../assets/images/banner/patterns/triangles_bottom.png'),
-    trianglesTop: new PatternData('위쪽 톱니 모양', '../assets/images/banner/patterns/triangles_top.png')
+    base: new PatternData('배경', '../assets/images/banner/patterns/base.png', '../assets/images/shield/patterns/base.png'),
+    border: new PatternData('테두리', '../assets/images/banner/patterns/border.png', '../assets/images/shield/patterns/border.png'),
+    bricks: new PatternData('벽돌 무늬', '../assets/images/banner/patterns/bricks.png', '../assets/images/shield/patterns/bricks.png'),
+    circle: new PatternData('원', '../assets/images/banner/patterns/circle.png', '../assets/images/shield/patterns/circle.png'),
+    creeper: new PatternData('크리퍼 모양', '../assets/images/banner/patterns/creeper.png', '../assets/images/shield/patterns/creeper.png'),
+    cross: new PatternData('X자형 십자', '../assets/images/banner/patterns/cross.png', '../assets/images/shield/patterns/cross.png'),
+    curlyBorder: new PatternData('톱니 테두리', '../assets/images/banner/patterns/curly_border.png', '../assets/images/shield/patterns/curly_border.png'),
+    diagonalLeft: new PatternData('왼쪽 위로부터의 사선 상부', '../assets/images/banner/patterns/diagonal_left.png', '../assets/images/shield/patterns/diagonal_left.png'),
+    diagonalRight: new PatternData('오른쪽 위로부터의 사선 상부', '../assets/images/banner/patterns/diagonal_right.png', '../assets/images/shield/patterns/diagonal_right.png'),
+    diagonalUpLeft: new PatternData('오른쪽 위로부터의 사선 하부', '../assets/images/banner/patterns/diagonal_up_left.png', '../assets/images/shield/patterns/diagonal_up_left.png'),
+    diagonalUpRight: new PatternData('왼쪽 위로부터의 사선 하부', '../assets/images/banner/patterns/diagonal_up_right.png', '../assets/images/shield/patterns/diagonal_up_right.png'),
+    flower: new PatternData('꽃 모양', '../assets/images/banner/patterns/flower.png', '../assets/images/shield/patterns/flower.png'),
+    globe: new PatternData('지구 모양', '../assets/images/banner/patterns/globe.png', '../assets/images/shield/patterns/globe.png'),
+    gradient: new PatternData('위쪽 그라데이션', '../assets/images/banner/patterns/gradient.png', '../assets/images/shield/patterns/gradient.png'),
+    gradientUp: new PatternData('아래쪽 그라데이션', '../assets/images/banner/patterns/gradient_up.png', '../assets/images/shield/patterns/gradient_up.png'),
+    halfHorizontal: new PatternData('중앙 가로선 상부', '../assets/images/banner/patterns/half_horizontal.png', '../assets/images/shield/patterns/half_horizontal.png'),
+    halfHorizontalBottom: new PatternData('중앙 가로선 하부', '../assets/images/banner/patterns/half_horizontal_bottom.png', '../assets/images/shield/patterns/half_horizontal_bottom.png'),
+    halfVertical: new PatternData('중앙 세로선 우측', '../assets/images/banner/patterns/half_vertical.png', '../assets/images/shield/patterns/half_vertical.png'),
+    halfVerticalRight: new PatternData('중앙 세로선 좌측', '../assets/images/banner/patterns/half_vertical_right.png', '../assets/images/shield/patterns/half_vertical_right.png'),
+    mojang: new PatternData('무언가', '../assets/images/banner/patterns/mojang.png', '../assets/images/shield/patterns/mojang.png'),
+    rhombus: new PatternData('마름모', '../assets/images/banner/patterns/rhombus.png', '../assets/images/shield/patterns/rhombus.png'),
+    skull: new PatternData('해골 모양', '../assets/images/banner/patterns/skull.png', '../assets/images/shield/patterns/skull.png'),
+    smallStripes: new PatternData('세로줄 무늬', '../assets/images/banner/patterns/small_stripes.png', '../assets/images/shield/patterns/small_stripes.png'),
+    squareBottomLeft: new PatternData('오른쪽 아래 사각형', '../assets/images/banner/patterns/square_bottom_left.png', '../assets/images/shield/patterns/square_bottom_left.png'),
+    squareBottomRight: new PatternData('왼쪽 아래 사각형', '../assets/images/banner/patterns/square_bottom_right.png', '../assets/images/shield/patterns/square_bottom_right.png'),
+    squareTopLeft: new PatternData('오른쪽 위 사각형', '../assets/images/banner/patterns/square_top_left.png', '../assets/images/shield/patterns/square_top_left.png'),
+    squareTopRight: new PatternData('왼쪽 위 사각형', '../assets/images/banner/patterns/square_top_right.png', '../assets/images/shield/patterns/square_top_right.png'),
+    straightCross: new PatternData('십자', '../assets/images/banner/patterns/straight_cross.png', '../assets/images/shield/patterns/straight_cross.png'),
+    stripeBottom: new PatternData('아래쪽 가로띠', '../assets/images/banner/patterns/stripe_bottom.png', '../assets/images/shield/patterns/stripe_bottom.png'),
+    stripeCenter: new PatternData('중앙 세로띠', '../assets/images/banner/patterns/stripe_center.png', '../assets/images/shield/patterns/stripe_center.png'),
+    stripeDownLeft: new PatternData('왼쪽 위로부터의 사선', '../assets/images/banner/patterns/stripe_downleft.png', '../assets/images/shield/patterns/stripe_downleft.png'),
+    stripeDonwRight: new PatternData('오른쪽 위로부터의 사선', '../assets/images/banner/patterns/stripe_downright.png', '../assets/images/shield/patterns/stripe_downright.png'),
+    stripeLeft: new PatternData('오른쪽 세로띠', '../assets/images/banner/patterns/stripe_left.png', '../assets/images/shield/patterns/stripe_left.png'),
+    stripeMiddle: new PatternData('중앙 가로띠', '../assets/images/banner/patterns/stripe_middle.png', '../assets/images/shield/patterns/stripe_middle.png'),
+    stripeRight: new PatternData('왼쪽 세로띠', '../assets/images/banner/patterns/stripe_right.png', '../assets/images/shield/patterns/stripe_right.png'),
+    stripeTop: new PatternData('위쪽 세로띠', '../assets/images/banner/patterns/stripe_top.png', '../assets/images/shield/patterns/stripe_top.png'),
+    triangleBottom: new PatternData('하단 삼각형', '../assets/images/banner/patterns/triangle_bottom.png', '../assets/images/shield/patterns/triangle_bottom.png'),
+    triangleTop: new PatternData('상단 삼각형', '../assets/images/banner/patterns/triangle_top.png', '../assets/images/shield/patterns/triangle_top.png'),
+    trianglesBottom: new PatternData('아래쪽 톱니 모양', '../assets/images/banner/patterns/triangles_bottom.png', '../assets/images/shield/patterns/triangles_bottom.png'),
+    trianglesTop: new PatternData('위쪽 톱니 모양', '../assets/images/banner/patterns/triangles_top.png', '../assets/images/shield/patterns/triangles_top.png'),
 };
 
 /*/ Svg Icons /*/
@@ -117,8 +117,12 @@ class BannerLayer {
         this.preview = document.createElement('canvas');
         this.preview.width = 20;
         this.preview.height = 40;
-
         document.getElementById('preview').appendChild(this.preview);
+
+        this.shieldPreview = document.createElement('canvas');
+        this.shieldPreview.width = 12;
+        this.shieldPreview.height = 22;
+        document.getElementById('previewShield').appendChild(this.shieldPreview);
     }
 
     setupLayerItem() {
@@ -181,8 +185,35 @@ class BannerLayer {
                 patternImage.src = this.pattern.img;
             }, false);
             backgroundImage.src = '../assets/images/banner/base.png';
-
         });
+
+        var shieldContext = this.shieldPreview.getContext('2d');
+        shieldContext.clearRect(0, 0, 12, 22);
+
+        var shieldBackground = new Image();
+        shieldBackground.addEventListener('load', () => {
+            shieldContext.drawImage(shieldBackground, 1, 1, 10, 20);
+            shieldContext.globalCompositeOperation = 'multiply';
+            shieldContext.fillStyle = this.color.code;
+            shieldContext.fillRect(1, 1, 10, 20);
+
+            var patternImage = new Image();
+            patternImage.addEventListener('load', () => {
+                shieldContext.globalCompositeOperation = 'destination-atop';
+                shieldContext.drawImage(patternImage, 1, 1, 10, 20);
+
+                if (this.pattern == Pattern.base) {
+                    shieldContext.globalCompositeOperation = 'source-over';
+                    var frameImage = new Image();
+                    frameImage.addEventListener('load', () => {
+                        shieldContext.drawImage(frameImage, 0, 0, 12, 22);
+                    });
+                    frameImage.src = '../assets/images/shield/frame.png';
+                }
+            }, false);
+            patternImage.src = this.pattern.shieldImg;
+        }, false);
+        shieldBackground.src = '../assets/images/shield/base.png';
     }
 
     /**
