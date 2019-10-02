@@ -138,7 +138,7 @@ class BannerLayer {
         this.layerThumbnail.classList.add('thumbnail');
         this.layerThumbnail.addEventListener('click', () => {
             Banner.currentLayer = this.index;
-        });
+        }, false);
         this.layerItem.appendChild(this.layerThumbnail);
 
         this.layerName = document.createElement('span');
@@ -146,7 +146,7 @@ class BannerLayer {
         this.layerName.innerHTML = this.color.name + ' ' + this.pattern.name;
         this.layerName.addEventListener('click', () => {
             Banner.currentLayer = this.index;
-        });
+        }, false);
         this.layerItem.appendChild(this.layerName);
 
         if (this.pattern != Pattern.base) {
@@ -156,30 +156,37 @@ class BannerLayer {
             deleteButton.innerHTML = Icon.trashCan;
             deleteButton.addEventListener('click', (e) => {
                 this.delete();
-            });
+            }, false);
             this.layerItem.appendChild(deleteButton);
 
             this.layerItem.draggable = true;
-            this.layerItem.addEventListener('dragstart', () => {
+            this.layerItem.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setDragImage(this.layerItem, 32, 32);
                 this.layerItem.style.opacity = '0.5';
-            });
+                Banner.dragedLayer = this;
+            }, false);
             this.layerItem.addEventListener('dragend', () => {
                 this.layerItem.style.opacity = '1';
-            });
+            }, false);
         }
         
-        this.layerItem.addEventListener('dragover', () => {
+        this.layerItem.addEventListener('dragover', (e) => {
+            e.preventDefault();
             this.layerItem.classList.add('drag-over');
-        });
+        }, false);
         this.layerItem.addEventListener('dragleave', () => {
             this.layerItem.classList.remove('drag-over');
-        });
-        this.layerItem.addEventListener('dragend', (e) => {
-            console.log(e);
-        });
-        this.layerItem.addEventListener('drop', (e) => {
-            console.log(e);
-        });
+        }, false);
+        this.layerItem.addEventListener('drop', () => {
+            this.layerItem.classList.remove('drag-over');
+            document.getElementById('preview').insertBefore(Banner.dragedLayer.preview, this.preview.nextSibling);
+            document.getElementById('previewShield').insertBefore(Banner.dragedLayer.shieldPreview, this.shieldPreview.nextSibling);
+            document.getElementById('layerList').insertBefore(Banner.dragedLayer.layerItem, this.layerItem);
+            Banner.dragedLayer.index = this.index + 1;
+            for (var i = this.index + 1; i < Banner.layers.length; i++) {
+                console.log(Banner.layers[i]);
+            }
+        }, false);
 
         var layerList = document.getElementById('layerList');
         layerList.insertBefore(this.layerItem, layerList.firstChild);
@@ -228,7 +235,7 @@ class BannerLayer {
                     var frameImage = new Image();
                     frameImage.addEventListener('load', () => {
                         shieldContext.drawImage(frameImage, 0, 0, 12, 22);
-                    });
+                    }, false);
                     frameImage.src = '../assets/images/shield/frame.png';
                 }
             }, false);
@@ -277,6 +284,7 @@ class BannerLayer {
 const Banner = {
     layers: [new BannerLayer(Pattern.base, Color.white, 0)],
     currentLayer: 0,
+    dragedLayer: null,
 
     /**
      * @param {PatternData} pattern 
@@ -323,7 +331,7 @@ Object.keys(Color).forEach(color => {
             return;
         }
         Banner.changeColor(Color[color]);
-    });
+    }, false);
 
     colors.push(colorObj);
     colorPicker.appendChild(colorObj);
@@ -348,10 +356,10 @@ Object.keys(Pattern).forEach(pattern => {
             return;
         }
         Banner.changePattern(Pattern[pattern]);
-    });
+    }, false);
     patternObj.addEventListener('dragstart', (e) => {
         e.preventDefault();
-    });
+    }, false);
 
     patterns.push(patternObj);
     patternPicker.appendChild(patternObj);
@@ -361,7 +369,7 @@ Object.keys(Pattern).forEach(pattern => {
 var addLayer = document.getElementById('addLayer');
 addLayer.addEventListener('click', () => {
     Banner.addLayer();
-});
+}, false);
 
 
 /*//--- Set Interval ---//*/
