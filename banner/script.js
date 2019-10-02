@@ -182,9 +182,12 @@ class BannerLayer {
             document.getElementById('preview').insertBefore(Banner.dragedLayer.preview, this.preview.nextSibling);
             document.getElementById('previewShield').insertBefore(Banner.dragedLayer.shieldPreview, this.shieldPreview.nextSibling);
             document.getElementById('layerList').insertBefore(Banner.dragedLayer.layerItem, this.layerItem);
-            Banner.dragedLayer.index = this.index + 1;
+
+            Banner.layers.splice(Banner.dragedLayer.index, 1);
+            Banner.dragedLayer.index = this.index;
+            Banner.layers.splice(this.index + 1, 0, Banner.dragedLayer);
             for (var i = this.index + 1; i < Banner.layers.length; i++) {
-                console.log(Banner.layers[i]);
+                Banner.layers[i].index++;
             }
         }, false);
 
