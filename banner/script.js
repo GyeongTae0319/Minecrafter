@@ -184,10 +184,17 @@ class BannerLayer {
             document.getElementById('layerList').insertBefore(Banner.dragedLayer.layerItem, this.layerItem);
 
             Banner.layers.splice(Banner.dragedLayer.index, 1);
-            Banner.dragedLayer.index = this.index;
             Banner.layers.splice(this.index + 1, 0, Banner.dragedLayer);
-            for (var i = this.index + 1; i < Banner.layers.length; i++) {
-                Banner.layers[i].index++;
+
+            var checkedCurrentLayer = false;
+            for (var i = 1; i < Banner.layers.length; i++) {
+                var newIndex = Banner.layers.indexOf(Banner.layers[i]);
+
+                if (Banner.currentLayer == Banner.layers[i].index && !checkedCurrentLayer) {
+                    Banner.currentLayer = newIndex;
+                    checkedCurrentLayer = true;
+                }
+                Banner.layers[i].index = newIndex;
             }
         }, false);
 
@@ -396,10 +403,8 @@ colorPickerUpdate = setInterval(() => {
 var wasLayer = null;
 function checkSelectedLayer() {
     Banner.layers.forEach(layer => {
-        if (Banner.layers[Banner.currentLayer].index == layer.index)
-            layer.layerItem.classList.add('selected');
-        else
-            layer.layerItem.classList.remove('selected');
+        layer.layerItem.classList.remove('selected');
+        Banner.layers[Banner.currentLayer].layerItem.classList.add('selected');
     });
 }
 selectedLayerUpdate = setInterval(() => {
