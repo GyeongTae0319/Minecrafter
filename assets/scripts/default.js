@@ -26,7 +26,7 @@ function setUrlParameter(key, value) {
     else {
         urlParams = `?${key}=${value}`;
     }
-    history.pushState(paramObj, '', `${location.origin}/${urlParams}`);
+    history.pushState(paramObj, '', `${location.origin}/Minecrafter/${urlParams}`);
 }
 
 /** Get Url Parameters
