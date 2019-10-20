@@ -1,0 +1,65 @@
+/*//=== Variable Data ===//*/
+html,
+html[data-theme="dark"] {
+    --main-theme-color: #121212;
+    --main-text-color: #ffffff;
+    --main-bg-color: #121212;
+    --main-gui-color: #ffffff;
+    --main-icon-color: #ffffff;
+    --main-scrollbar-color: #595959;
+    --main-scrollbar-hover-color: #636363;
+
+    --header-bg-color: #272727;
+    --header-theme-icon-color: #ffc928;
+    --header-theme-icon-color-dark: #ffb100;
+
+    --nav-bg-color: #1c1c1c;
+
+    --list-item-light-color: #333333;
+    --list-item-highlight-color: #484848;
+
+    --color-picker-border-color: #cccccc33;
+}
+html[data-theme="light"] {
+    --main-text-color: #000000;
+    --main-bg-color: #ffffff;
+    --main-gui-color: #606060;
+    --main-icon-color: #000000;
+    --main-scrollbar-color: #c1c1c1;
+    --main-scrollbar-hover-color: #a8a8a8;
+
+    --header-bg-color: #ffffff;
+
+    --nav-bg-color: #f5f5f5;
+
+    --list-item-light-color: #dcdcdc;
+    --list-item-highlight-color: #c4c4c4;
+    
+    --color-picker-border-color: #33333333;
+}
+
+
+
+/*//=== Default Style ===//*/
+* {
+    box-sizing: border-box;
+}
+
+/* Anchor */
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+
+
+/*//=== Body Style ===//*/
+body {
+    text-align: center;
+
+    margin: 0;
+
+    color: var(--main-text-color);
+
+    transition: color 0.25s ease;
+}

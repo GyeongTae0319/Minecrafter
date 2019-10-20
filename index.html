@@ -19,26 +19,33 @@
 
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
-    <link rel="stylesheet" href="./assets/styles/default.css">
+    <link rel="stylesheet" href="./assets/styles/defalut.css">
     <link rel="stylesheet" href="./style.css">
     
+    <script src="./assets/scripts/default.js"></script>
+    <script src="./assets/scripts/theme.js"></script>
     <script src="./script.js"></script>
 </head>
-<body>
-    <input type="checkbox" name="header_setting" id="navSwitch">
-    <input type="checkbox" name="header_setting" id="nightSwitch" checked>
+<body onload="init()">
+    <div id="loadingScr">
+        <img class="img-title" src="./assets/images/title.svg">
+    </div>
 
     <header>
-        <label id="navSwitchIcon" for="navSwitch">
-            <span></span><span></span><span></span>
-        </label>
+        <div class="group-btn-left">
+            <span class="btn-nav" onclick="toggleNavOpened()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
 
-        <a href="./home/" target="section">
-            <img src="./assets/images/title.svg" id="headerTitleImg">
+        <a class="img-title" href="./home/" target="section">
+            <img src="./assets/images/title.svg">
         </a>
 
-        <div id="settings">
-            <a href="https://github.com/GyeongTae0319/Minecrafter" target="_blank" class="item" id="githubLink">
+        <div class="group-btn-right">
+            <a class="btn-github" href="https://github.com/GyeongTae0319/Minecrafter" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.78 117.79">
                     <defs>
                         <style>
@@ -60,30 +67,28 @@
                     <path class="cls-2" d="M45,97.8c.09.49-.41,1-1.12,1.12s-1.35-.17-1.44-.66.42-1,1.12-1.12,1.35.17,1.44.66Z"/>
                 </svg>
             </a>
-            <label for="nightSwitch" class="item" id="nightSwitchIcon">
-                <span id="moon"></span>
-                <span id="moonShadow"></span>
-            </label>
+            <span class="btn-theme" onclick="toggleTheme()">
+                <span class="base">
+                    <span class="overlay"></span>
+                </span>
+                <span class="shadow"></span>
+            </span>
         </div>
     </header>
 
     <nav>
-        <a href="./home/" target="section" class="item selected" id="homeSelector">
+        <a class="item" id="home" href="./home/" target="section">
             <img src="./assets/images/favicon.png">
             <span>홈</span>
-        </a>
-
-        <a href="./skin/" target="section" class="item" id="skinToolSelector">
-            <img src="./assets/images/icons/player_head.png">
-            <span>스킨 도구</span>
-        </a>
-
-        <a href="./banner/" target="section" class="item" id="bannerToolSelector">
+        </a>    
+        <a class="item" id="banner" href="./banner/" target="section">
             <img src="./assets/images/icons/banner.png">
             <span>현수막 도구</span>
         </a>
     </nav>
 
-    <iframe src="./home/" name="section" id="section"></iframe>
+    <section>
+        <iframe name="section"></iframe>
+    </section>
 </body>
 </html>
