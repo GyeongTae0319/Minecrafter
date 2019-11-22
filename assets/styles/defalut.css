@@ -63,3 +63,11 @@ body {
 
     transition: color 0.25s ease;
 }
+
+/* Article Style */
+article {
+    margin-top: 16px;
+}
+article>.title {
+    font-size: 1.75em;
+}

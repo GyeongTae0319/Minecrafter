@@ -8,6 +8,24 @@
     <script src="./script.js"></script>
 </head>
 <body onload="init()">
-    <h1>현수막 도구</h1>
+    <article id="maker">
+        <h1 class="title">현수막 만들기</h1>
+        <div class="workspace">
+            <div id="colorPicker"></div>
+            <div class="preview">
+                <span id="shield"></span>
+                <span id="banner"></span>
+                <div class="list reverse" id="layers">
+                    <div class="header">
+                        <span id="addLayer">
+                            <span></span><span></span>
+                        </span>
+                    </div>
+                    <div class="items"></div>
+                </div>
+            </div>
+            <div id="patternPicker"></div>
+        </div>
+    </article>
 </body>
 </html>

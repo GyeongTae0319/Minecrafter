@@ -1,0 +1,42 @@
+/*//=== Banner Maker Style ===//*/
+
+/*/ Color Picker /*/
+#maker>.workspace>#colorPicker {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 64px;
+}
+
+/* Color */
+#maker>.workspace>#colorPicker>.color {
+    display: inline-block;
+
+    flex-shrink: 0;
+    overflow: hidden;
+
+    width: 48px;
+    height: 48px;
+
+    margin: 16px;
+
+    border-radius: 100%;
+
+    cursor: pointer;
+
+    transition: width 0.1s, height 0.1s, margin 0.1s;
+}
+#maker>.workspace>#colorPicker>.color>span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+#maker>.workspace>#colorPicker>.color.selected {
+    width: 64px;
+    height: 64px;
+
+    margin: 8px;
+}
